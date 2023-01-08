@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="doithi.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <h1>Kết quả thi</h1>
+        <div class="myBoxTeam">
+            <div class="div1">
+                <div class="phanThi">
+                    <label for="listTeam1"><b>Phần thi:</b></label>
+                    <select id="listTeam1" onchange="getPT()">
+                        <option value="none" selected disabled hidden>Select an Option</option>
+                        <option value="Lập trình đồng đội">Lập trình đồng đội</option>
+                        <option value="Ý tưởng sáng tạo">Ý tưởng sáng tạo</option>
+                        <option value="Hùng biện">Hùng biện</option>
+                    </select>
+                </div>
+                <div class="giaiThuong">
+                    <label for="listTeam2"><b>Giải thưởng:</b></label>
+                    <select id="listTeam2" onchange="getGT()">
+                        <option value="none" selected disabled hidden>Select an Option</option>
+                        <option value="Giải Nhất">Giải Nhất</option>
+                        <option value="Giải Nhì">Giải Nhì</option>
+                        <option value="Giải Ba">Giải Ba</option>
+                        <option value="Giải Khuyến Khích">Giải Khuyến Khích</option>
+                    </select>
+                </div>
+                <div class="doiThi"><label for="listTeam3"><b>Đội thi:</b></label>
+                    <select id="listTeam3" onchange="getDT()">
+                        <option value="none" selected disabled hidden>Select an Option</option>
+                        <option value="Đội 1">Đội 1</option>
+                        <option value="Đội 2">Đội 2</option>
+                        <option value="Đội 3">Đội 3</option>
+                        <option value="Đội 4">Đội 4</option>
+                    </select>
+
+                </div>
+            </div>
+            <div class="inline">
+                <button id="buttonAdd" onclick="Add();">Thêm kết quả</button>
+                <button id="buttonDelete" onclick="Delete();">Xoá kết quả</button>
+                <button id="buttonUpdate" onclick="Update();">Sửa kết quả</button>
+
+            </div>
+            <ul id="Team">
+                <li>Lập trình đồng đội - Giải Nhất - Đội 2</li>
+                <li>Lập trình đồng đội - Giải Nhất - Đội 1</li>
+                <li>Lập trình đồng đội - Giải Nhất - Đội 3</li>
+            </ul>
+        </div>
+        <script src="CRUD.js"></script>
+</body>
+
+</html>

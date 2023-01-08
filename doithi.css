@@ -1,0 +1,131 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 60%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #333;
+    transform: scale(0.85);
+}
+
+:root {
+    --Color--one: yellow;
+    --Color--two: rgb(77, 74, 74);
+}
+
+.wrapper {
+    width: 92%;
+    height: 100vh;
+    margin: auto;
+}
+
+h1 {
+    color: var(--Color--one);
+    font-size: 6rem;
+    padding-left: 30px;
+}
+
+/* content-left */
+.myBoxTeam {
+    width: 100%;
+    height: 75%;
+    border: 3px solid var(--Color--one);
+    border-radius: 40px;
+    position: relative;
+}
+
+.div1 {
+    width: 25%;
+    height: 100%;
+    margin: 2rem 0 0 4rem;
+    display: inline-block;
+}
+
+label,
+select,
+button {
+    display: block;
+    text-align: center;
+    margin: auto;
+    font-size: 4rem;
+}
+
+label {
+    color: var(--Color--one);
+    padding: 10px 0;
+}
+
+select {
+    padding: 16px 10px;
+    text-align: left;
+    margin-bottom: 30px;
+    color: var(--Color--two);
+}
+
+#listTeam1 {
+    width: auto;
+
+
+}
+
+#listTeam2 {
+    width: auto;
+
+}
+
+#listTeam3 {
+    width: auto;
+}
+
+button {
+    margin: 60px 0 0 50px;
+    font-size: 4rem;
+    padding: 10px;
+    border-radius: 15px;
+    border: 5px solid white;
+    box-shadow: white 8px 8px 3px 0px;
+    background-color: var(--Color--one);
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+#Team {
+    width: 60%;
+    height: 80%;
+    background-color: white;
+    display: inline-block;
+    position: absolute;
+    right: 40px;
+    top: 40px;
+    border-right: 40px solid var(--Color--one);
+    border-left: 40px solid var(--Color--one);
+    overflow: scroll;
+
+}
+.active{
+    background-color: rgb(209, 202, 202);
+}
+li {
+    width: 90%;
+    height: 40px;
+    font-size: 3.3rem;
+    color: var(--Color--two);
+    margin: 20px 0 0 30px;
+
+}
+
+.inline button {
+    display: inline;
+}
+
+#Team li:hover {
+    background-color: rgb(209, 202, 202);
+}
