@@ -2,6 +2,7 @@ var input_PT = document.getElementById("listTeam1"),
     input_GT = document.getElementById("listTeam2"),
     input_DT = document.getElementById("listTeam3"),
     items = document.querySelectorAll("#Team li"), tab = [];
+    // test
 
 for (var i = 0; i < items.length; i++) {
 
