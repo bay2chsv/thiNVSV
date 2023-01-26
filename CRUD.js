@@ -1,10 +1,10 @@
-var input_PT = document.getElementById("listTeam1"),
+let input_PT = document.getElementById("listTeam1"),
     input_GT = document.getElementById("listTeam2"),
     input_DT = document.getElementById("listTeam3"),
     items = document.querySelectorAll("#Team li"), tab = [];
     // test
 
-for (var i = 0; i < items.length; i++) {
+/* for (var i = 0; i < items.length; i++) {
 
     tab.push(items[i].innerHTML);//put text of items -> tab[]
     console.log(items[i].innerHTML)//log for checking what we're putting in
@@ -20,29 +20,16 @@ for (var i = 0; i < items.length; i++) {
         input_GT.value = myArray[1]
         input_DT.value = myArray[2]
     }
-}
+} */
+getPT = () => input_PT.value
+getGT = () => input_GT.value
+getDT = () => input_DT.value
 
-
-getPT = () => {
-    var valuePT = input_PT.value;
-    console.log(valuePT);
-    return valuePT
-}
-getGT = () => {
-    var valueGT = input_GT.value;
-    console.log(valueGT);
-    return valueGT
-}
-getDT = () => {
-    var valueDT = input_DT.value;
-    console.log(valueDT);
-    return valueDT
-}
 refreshArray = () => {
-
     tab.length = 0;
-    items = document.querySelectorAll("#Team li")
+    items = document.querySelectorAll("#Team li");
     for (var i = 0; i < items.length; i++) {
+        //console.log(items[i].innerHTML)
         tab.push(items[i].innerHTML);
     }
 }
@@ -63,18 +50,17 @@ Add = () => {//function thêm
     if (getDT() !== 'none' && getGT() !== 'none' && getPT() !== 'none') {
         var text = getPT() + " - " + getGT() + " - " + getDT();
         if (checkArray(text)) {
-            var team = document.getElementById("Team"),
-                createLi = document.createElement("li"); //tạo li
-
-            // checkArray(text);
-            createLi.append(text);
-            team.appendChild(createLi).innerHTML //bỏ text vào id = Team
+            let team = document.getElementById("Team"),
+                liNode = document.createElement("li"); //tạo li
+           
+            liNode.append(text);
+            team.appendChild(liNode).innerHTML //bỏ text vào id = Team
             refreshArray();
 
-            createLi.onclick = function () {
-                index = tab.indexOf(createLi.innerHTML);
-                console.log(createLi.innerHTML + " index = " + index)
-                myArray = createLi.innerHTML.split(" - ");
+            liNode.onclick = function () {
+                index = tab.indexOf(liNode.innerHTML);
+                console.log(liNode.innerHTML + " index = " + index)
+                myArray = liNode.innerHTML.split(" - ");
                 // console.log(myArray)
                 input_PT.value = myArray[0]
                 input_GT.value = myArray[1]
@@ -114,10 +100,10 @@ Update = () => {
 
 Delete = () => {
     if (getDT() !== 'none' && getGT() !== 'none' && getPT() !== 'none') {
-
         //console.log(items[index].parentNode )
         //  console.log(items[index])
         items[index].parentNode.removeChild(items[index]);
+        refreshArray();
         //items[index].remove()  có thể dùng hàm thay thế    
         alert("Xóa thành công")
     }
