@@ -28,28 +28,33 @@ getDT = () => input_DT.value
 refreshArray = () => {
     tab.length = 0;
     items = document.querySelectorAll("#Team li");
-    for (var i = 0; i < items.length; i++) {
+    for (let i = 0; i < items.length; i++) {
         //console.log(items[i].innerHTML)
         tab.push(items[i].innerHTML);
+        let box = items[i].innerHTML.split(" - ");
+        tab.push(box[0] +" - "+ box[1])
+        console.log(tab)
+
     }
 }
 
-checkArray = (test) => {
+checkArray = (test,box) => {
     // console.log(tab)
     // console.log(tab.includes(test))
-    if (tab.includes(test) === true) {
+    if (tab.includes(test) === true ) {
         return false
     }
     else {
-        return true
+       return (tab.includes(box) === true)?false:true;
     }
 }
 
 
 Add = () => {//function thêm
     if (getDT() !== 'none' && getGT() !== 'none' && getPT() !== 'none') {
-        var text = getPT() + " - " + getGT() + " - " + getDT();
-        if (checkArray(text)) {
+        let text = getPT() + " - " + getGT() + " - " + getDT();
+        let box = getPT() + " - " + getGT();
+        if (checkArray(text,box)) {
             let team = document.getElementById("Team"),
                 liNode = document.createElement("li"); //tạo li
            
@@ -80,7 +85,7 @@ Add = () => {//function thêm
 
 
 Update = () => {
-    var text = getPT() + " - " + getGT() + " - " + getDT();
+    let text = getPT() + " - " + getGT() + " - " + getDT();
     if (getDT() !== 'none' && getGT() !== 'none' && getPT() !== 'none') {
         if (checkArray(text)) {
          
